@@ -738,7 +738,7 @@ describe("kong start/stop #" .. strategy, function()
 
       assert.matches("started", stdout)
 
-      ok, code, stdout, sdterr = start(true)
+      ok, code = start(true)
       assert.falsy(ok, "expected `kong start --cleanup-sockets` to fail with kong already running")
       assert.equals(1, code)
       assert(helpers.path.exists(event_sock))

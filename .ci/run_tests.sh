@@ -40,7 +40,7 @@ if [ "$TEST_SUITE" == "integration" ]; then
         # Note that the split here is chosen carefully to result
         # in a similar run time between the two batches, and should
         # be adjusted if imbalance become significant in the future
-        eval "$TEST_CMD" $(ls -d spec/02-integration/* | tail -n+5)
+        eval "$TEST_CMD" spec/02-integration/05-proxy/10-balancer/01-healthchecks_spec.lua
 
     else
         # Non GitHub Actions

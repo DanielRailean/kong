@@ -383,6 +383,7 @@ for _, strategy in helpers.each_strategy() do
       local oks, fails, last_status = bu.client_requests(bu.SLOTS, api_host)
       assert.same(0, oks)
       assert.same(bu.SLOTS, fails)
+      os.execute("cat servroot/logs/error.log")
       assert.same(503, last_status)
 
       local health = bu.get_upstream_health(upstream_name)

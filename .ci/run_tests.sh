@@ -122,8 +122,9 @@ if [ "$TEST_SUITE" == "plugins" ]; then
         exit 0
     fi
 fi
-if [ "$TEST_SUITE" == "pdk" ]; then
+if [ "$TEST_SUITE" == "ngx" ]; then
     TEST_NGINX_RANDOMIZE=1 prove -I. -r t/01-pdk
+    TEST_NGINX_RANDOMIZE=1 prove -I. -r t/04-db
 fi
 if [ "$TEST_SUITE" == "unit" ]; then
     unset KONG_TEST_NGINX_USER KONG_PG_PASSWORD KONG_TEST_PG_PASSWORD
